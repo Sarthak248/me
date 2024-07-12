@@ -45,21 +45,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-right: 10vw;
+    /* margin-right: 10vw; */
 }
 
 .skills-container {
     width: 450px;
     display: grid;
     grid-template-columns: repeat(auto-fill,minmax(100px, 1fr));
-}
-
-.skills-education-container {
-    margin: 10vh 10vw;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
 }
 
 .education-container-navbar {
@@ -78,13 +70,12 @@
     font-size: 20px;
     font-weight: 700;
     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
-    margin-bottom: 30px;
+    /* margin-bottom: 30px; */
 }
 
 .education-container {
     display: flex;
-    margin-top: 35vh;
-    width: 35vw;
+    /* width: 35vw; */
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -178,9 +169,9 @@
         width: 60vw;
     }
 
-    .contact-container {
+    /* .contact-container {
 
-    }
+    } */
 
     .copyright-title {
         font-size: 13px;
