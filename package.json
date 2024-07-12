@@ -1,6 +1,6 @@
 {
-  "homepage": "https://sarthak248.github.io/my-portfolio/",
-  "name": "my-app",
+  "homepage": "https://sarthak248.github.io/me",
+  "name": "my-portfolio",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
