@@ -1,0 +1,101 @@
+.about-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 70vw;
+  margin: auto;
+  overflow-anchor: none;
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  text-align: left;
+  margin-right: 140px;
+  width: 50vw;
+}
+
+.about-name {
+  color: rgba(253, 252, 252, 0.759);
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 10%;
+  padding-top: 70px;
+}
+
+.about-title {
+  color: rgba(0, 0, 0, 0.700);
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.about-p1 {
+  color: rgba(0, 0, 0, 0.758);
+  font-weight: 400;
+  line-height: 220%;
+  font-size: 18px;
+  width: 38vw;
+  margin-top: 5px;
+}
+
+.about-projects {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.707);
+  border: none;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.807);
+}
+
+.about-projects:hover {
+  background-color: #d7982248;
+  cursor: pointer;
+}
+
+.about-myPhoto {
+  height: 60vh;
+  border-radius: 20vh;
+  box-shadow: 3px 10px 3px rgba(0, 0, 0, 0.1);
+}
+
+@media all and (max-width: 800px) {
+  .about-container {
+    flex-direction: column;
+    width: 85vw;
+  }
+
+  .about {
+    margin: -10px 0px;
+    width: 100%;
+  }
+
+  .about-name {
+    font-size: 45px;
+  }
+
+  .about-title {
+    font-size: 23px;
+  }
+
+  .about-p1 {
+    font-size: 15px;
+    width: 100%;
+  }
+
+  .about-myPhoto {
+    position: relative;
+    top: -30vh;
+    left: 15vw;
+    height: 180px;
+    margin-bottom: -150px;
+  }
+}

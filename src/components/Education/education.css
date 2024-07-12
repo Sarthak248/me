@@ -1,0 +1,66 @@
+.education {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.education > div {
+    margin: 18px;
+}
+
+.education-degree {
+    font-size: 17px;
+}
+
+.education-clubs {
+    font-size: 17px;
+}
+
+.degree-logo-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.education-image {
+    width: 8.4vh;
+    height: 10vh;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.wds-image {
+    width: 8.4vh;
+    height: 8.4vh;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.clubs-image-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+@media all and (max-width: 800px) {
+    .education {
+        width: 90vw;
+    }
+    
+    .education > div {
+        margin: 10px 0px;
+    }
+    
+    .degree-logo-container {
+        width: 90vw;
+    }
+
+    .education-degree {
+        width: 80vw;
+        font-size: 13px;
+    }
+
+    .education-clubs {
+        font-size: 13px;
+    }
+}

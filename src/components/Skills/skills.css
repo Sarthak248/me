@@ -1,0 +1,42 @@
+.skills {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    line-height: 0px;
+}
+
+.skills-imageAndName {
+    height: 120px;
+    width: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.skills-name {
+    margin-bottom: 0px;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.skills-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media all and (max-width: 800px) {
+    .skills {
+        margin-bottom: -10px;
+    }
+
+    .skills-imageAndName {
+        height: 100px;
+    }
+
+    .skills-name {
+        font-size: 12px;
+    }
+}
