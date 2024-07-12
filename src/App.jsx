@@ -12,6 +12,7 @@ import Project from './components/Project/Project';
 import Skills from './components/Skills/Skills';
 import Education from './components/Education/Education';
 import Contact from './components/Contact/Contact';
+import Experience from './components/Experience/experience';
 
 export default function App() {
     useEffect(() => {
@@ -81,12 +82,57 @@ export default function App() {
             width: '35vw',
             id: 6
         },
-    ]
+    ]    
 
     const projectsElements = projectsArray.map((project, index) => {
         return <Project 
             key = {index}
             details = {project}
+        />
+    })     
+
+    const expArray = [
+        {
+            name: 'Full Stack SWE @ Manulife',
+            description: `A spring boot project that serves as a robust Enterprise Management System, providing RESTful APIs to perform CRUD operations. Provides a way for companies to manage their budgeting system and monitor employee expenses`,
+            skills: ['Spring Boot', 'Java', 'RESTful APIs', 'JDBC', 'JUnit', 'JWT', 'Auth 2.0', 'SQL', 'Controller-Service-Repository Architcecture', 'Postman'],
+            image: 'capicImage.png',
+            width: '40vw',
+            id: 1
+        },
+        {
+            name: 'Salesforce Software Developer @ Manulife',
+            description: `This app addresses the difficulties in finding hotels and restaurants while also integrating a budget component to make dream vacations accessible to everyone.`,
+            skills: ['Javascript', 'React', 'Express', 'REST API', 'AWS', 'Git', 'Postman', 'Firebase'],
+            github: 'https://github.com/Sarthak248/TravelTrove',
+            image: 'musicImage.png',
+            width: '40vw',
+            id: 2
+        },
+        {
+            name: 'Full Stack SDE Intern @ OmniCard',
+            description: `Web-based application built using JavaScript and React, designed to help commuters efficiently navigate the complex Delhi Metro network with its intricate interchanges. The application utilizes Dijkstra's algorithm, a widely-used graph traversal algorithm, to find the shortest route between two stations, ensuring optimal travel time and convenience.`,
+            skills: ['Javascript', 'Node.js', 'Express', 'CSS', 'REST API', 'Google Cloud', 'Git', 'Firebase'],
+            github: 'https://github.com/Sarthak248/CorpoSync-EnterpriseManagement',
+            image: 'courseOutlineImage.png',
+            width: '40vw',
+            id: 3
+        },
+        {
+            name: 'Virtual Data Engineer Intern @JP Morgan',
+            description: `The Automated Web Scraping Prototype is a Python-based solution that streamlines the process of fetching and exporting description details from various websites. Leveraging powerful frameworks such as Selenium, Pandas, Beautiful Soup, and Webdriver, the project automates data extraction and conversion to a CSV format, significantly reducing manual effort by almost 90%.`,
+            skills: ['React', 'Javascript', 'CSS', 'HTML', 'Git'],
+            github: 'https://github.com/Sarthak248/TravelTrove',
+            image: 'tenziesImage.png',
+            width: '30vw',
+            id: 4
+        },
+    ]
+
+    const expElements = expArray.map((exp, index) => {
+        return <Experience 
+            key = {index}
+            details = {exp}
         />
     }) 
 
@@ -141,6 +187,19 @@ export default function App() {
 
             <About />
 
+            <div className='exp-container-navbar' id='exp-container-navbar'></div>
+
+            <motion.h2 
+                className='projectsAndExperiences' 
+                id='projectsAndExperiences'
+                data-aos='fade-down'
+                data-aos-anchor-placement='bottom-bottom'
+            >
+                My Expereinces Work Summary
+            </motion.h2>
+
+            {expElements}
+
             <div className='projects-container-navbar' id='projects-container-navbar'></div>
 
             <motion.h2 
@@ -154,29 +213,28 @@ export default function App() {
 
             {projectsElements}
             
-            <div className='skills-education-container'>
-                <div className='skills-tools-container'>
-                    <div className='skills-container-navbar' id='skills-container-navbar'></div>
-                    <h2 
-                    data-aos='fade-down' 
-                    className='skills-tools' 
-                    id='skills-tools'>
-                        Tools and Technologies
-                    </h2>
-                    <div 
-                        style={{ marginBottom: '100px' }}
-                        className='skills-container' 
-                        id='skills-container'
-                    >
-                        {skillsElements} 
-                    </div>
-                </div>
-                <div className='education-container'>
-                    <div className='education-container-navbar' id='education-container-navbar'></div>
-                    <h2 data-aos='fade-down' className='education-header' id='education-header'>Education</h2>
-                    {educationElements}
+            <div className='skills-tools-container'>
+                <div className='skills-container-navbar' id='skills-container-navbar'></div>
+                <h2 
+                data-aos='fade-down' 
+                className='skills-tools' 
+                id='skills-tools'>
+                    Tech Stack
+                </h2>
+                <div 
+                    style={{ marginBottom: '100px' }}
+                    className='skills-container' 
+                    id='skills-container'
+                >
+                    {skillsElements} 
                 </div>
             </div>
+            <div className='education-container'>
+                <div className='education-container-navbar' id='education-container-navbar'></div>
+                <h2  className='education-header' id='education-header'>Education</h2>
+                {educationElements}
+            </div>
+
             <div className='contact-container' id='contact-container'>
                 <div className='contact-container-navbar' id='contact-container-navbar'></div>
                 <h2 data-aos='fade-down' data-aos-anchor-placement='bottom-bottom' className='contact-header'>Get in Touch</h2>

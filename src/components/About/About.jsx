@@ -32,7 +32,7 @@ export default function Navbar() {
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.5, delay: 0.5 }}
                 >
-                Aspiring Software Engineer
+                - A Wanna-Be Software Engineer
                 </motion.h3>
 
                 <motion.p
@@ -41,11 +41,11 @@ export default function Navbar() {
                     transition={{ duration: 0.5, delay: 0.7 }}
                     className='about-p1'
                 >
-                    I'm in my 2nd year of SWE at Western. My current goal is to learn AI and Machine Learning for image recognition for a cool project I'm working on.
-                    I'm excited to learn about trending technologies like cloud platforms and CRM tools like Salesforce. My end goal as a software engineer is to be
-                    skilled enough to build large, end-to-end applications that reduce effort in people's day-to-day lives!<br></br>
-                    Besides SWE, I love listening to many genres of music - Metal, R&B, Bollywood, Rap, Indie...
-                    I also love working out and I'm trying to unlock my full potential as a calisthenics athlete.
+                    I'm in my 3rd year of SWE at Western. My current goal is to learn AI and Machine Learning for image recognition for a cool project I'm working on 📷.
+                    I'm excited to learn about trending technologies like cloud platforms and CRM tools like Salesforce ☁️. My end goal as a software engineer is to be
+                    skilled enough to build large, end-to-end applications that reduce effort in people's day-to-day lives! 🤓<br></br>
+                    Besides SWE, I love listening to music, Play the 🎸and want to get into rock climbing 🪨.
+                    I also love working out and I'm trying to unlock my full potential as a calisthenics athlete 💪.
                 </motion.p>
 
                 <motion.button
@@ -53,9 +53,9 @@ export default function Navbar() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.5, delay: 0.9 }}
-                    onClick={() => scrollToComponent('projects-container-navbar')}
+                    onClick={() => scrollToComponent('exp-container-navbar')}
                 >
-                    Projects
+                    Work-Ex 💼
                     <img
                         src={require("../../images/downArrow.png")}
                         alt="downArrow"

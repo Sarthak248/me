@@ -1,0 +1,187 @@
+.projects-container-main {
+  display: flex;
+  margin: auto;
+  max-width: 75vw;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.projects-image {
+  width: 600px;
+}
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: right;
+  align-items: flex-end;
+  color: rgba(0, 0, 0, 0.778);
+  height: 100%;
+  width: 40%;
+}
+
+.projects-title {
+  font-size: 20px;
+  font-weight: 700;
+  padding-right: 30px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  color: #4057a1ea;
+}
+
+.projects-title::after {
+  content: "";
+  display: inline-block;
+  width: 70%;
+  height: 2px;
+  margin-top: -10px;
+  background-color: black;
+  vertical-align: middle;
+}
+
+.project-details { 
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.details-description {
+  font-weight: 300;
+  line-height: 200%;
+  background-color: white;
+  color: rgba(0, 0, 0, 0.733);
+  padding: 0px 30px;
+  font-size: 16px;
+}
+
+.details-skills {
+  max-width: 90vw;
+  padding-right: 30px;
+  text-align: right;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 200%;
+  color: rgba(0, 0, 0, 0.797);
+  margin-left: 20px;
+}
+
+.details-github {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #4057a1;
+  height: 30px;
+  border-radius: 5px;
+  background-color: transparent;
+}
+
+.details-github:hover {
+  color: #d79822a6;
+}
+
+.github-image {
+  padding-left: 5px;
+  height: 1vw;
+}
+
+.github-link {
+  display: flex;
+  justify-content: right;
+  padding-right: 30px;
+}
+
+.projects-other-info {
+  display: flex;
+  flex-direction: row;
+  font-size: 16px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.674);
+  margin-right: 30px;
+  margin-top: 20px;
+}
+
+.projects-other-info p {
+  margin-left: 15px;
+  margin-bottom: 5px;
+}
+
+@media all and (max-width: 800px) {
+  .projects-container-main {
+      flex-direction: column;
+  }
+
+  .projects-image {
+      width: 90vw;
+  }
+
+  .projects {
+      margin-top: 20px;
+      align-items: center;
+  }
+
+  .project-details {
+      align-items: center;
+  }
+
+  .projects-title {
+      font-size: 19px;
+      width: 80vw;
+      text-align: center;
+      padding: 0;
+      margin-bottom: 15px;
+  }
+
+  .projects-title::after {
+      display: none;
+  }
+
+  .details-description {
+      font-size: 13px;
+      text-align: center;
+      width: 80vw;
+  }
+
+  .details-skills {
+      font-size: 13px;
+      text-align: center;
+      padding: 0;
+      width: 80vw;
+  }
+  
+  .github-link {
+      padding: 0;
+      margin-top: -5px;
+      align-items: center;
+      justify-content: center;
+  }
+
+  .details-github {
+      font-size: 14px;
+  }
+
+  .details-view {
+      font-size: 14px;
+  }
+
+  .github-image {
+      height: 3vw;
+  }
+
+  .projects-other-info {
+      flex-direction: row;
+      font-size: 13px;
+      font-weight: 600;
+      color: rgba(0, 0, 0, 0.674);
+      margin-top: 15px;
+      width: 80vw;
+      align-items: center;
+      justify-content: center;
+  }
+}

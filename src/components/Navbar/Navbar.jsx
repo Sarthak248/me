@@ -21,6 +21,7 @@ export default function MyNavbar() {
                 <Navbar.Collapse id="basic-navbar-nav" className='nav-hamburger-menu'>
                     <Nav className='nav-buttons'>
                         <button onClick={() => scrollToComponent('about')}>ABOUT</button>
+                        <button onClick={() => scrollToComponent('exp-container-navbar')}>EXPERIENCE</button>
                         <button onClick={() => scrollToComponent('projects-container-navbar')}>PROJECTS</button>
                         <button onClick={() => scrollToComponent('skills-container-navbar')}>TECHNOLOGIES</button>
                         <button onClick={() => scrollToComponent('education-container-navbar')}>EDUCATION</button>
