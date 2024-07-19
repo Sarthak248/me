@@ -1,16 +1,30 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './about.css';
 import { motion } from 'framer-motion';
+import waveImage from '../../images/wave.png'; 
 
-export default function Navbar() {
-    function scrollToComponent(id) {
-        const component = document.getElementById(id);
-        window.scrollTo({
-            top: component.offsetTop,
-            behavior: 'smooth'
-        })
-    }
+export default function About() {
+    const [text, setText] = useState('');
+    const [showWave, setShowWave] = useState(false);
+    const fullText = "Hii, I'm Sarthak ";
 
+    useEffect(() => {
+        let i = 0;
+        const speed = 50; // The speed/duration of the effect in milliseconds
+
+        function typeWriter() {
+            if (i < fullText.length) {
+                setText(prevText => prevText + fullText.charAt(i));
+                i++;
+                setTimeout(typeWriter, speed);
+            } else {
+                setShowWave(true);
+            }
+        }
+
+        typeWriter();
+    }, []);
+    
     return (
         <div className='about-container'>
             <motion.div
@@ -23,7 +37,8 @@ export default function Navbar() {
                     animate={{ opacity: 1, y: -40 }}
                     transition={{ duration: 0.8 }}
                 >
-                Hi, I'm Sarthak &#128075;
+                    {text}
+                    {showWave && <img src={waveImage} alt="wave" className="wave" />}
                 </motion.h1>
 
                 <motion.h3
@@ -53,7 +68,6 @@ export default function Navbar() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.5, delay: 0.9 }}
-                    onClick={() => scrollToComponent('exp-container-navbar')}
                 >
                     Work-Ex 💼
                     <img

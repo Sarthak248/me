@@ -14,10 +14,63 @@ import Education from './components/Education/Education';
 import Contact from './components/Contact/Contact';
 import Experience from './components/Experience/experience';
 
+function importAll(r) {
+    return r.keys().map(r);
+}
+
 export default function App() {
     useEffect(() => {
         Aos.init({});
+        const rotatingCircle = document.getElementById('rotating-circle');
+        const sharinganImages = importAll(require.context('./images/sharingan', false, /\.(png|jpe?g|svg)$/));
+
+        const rotationTimes = [
+            1.5, 1.5, 1.5, 1.8, 1.8, 1.5, 1.8, 1.8, 1.8, 1.5, 1.5, 1.5, 1.5,
+        ];
+
+        let currentImageIndex = -1;
+        let interval;
+
+        function changeSharinganImage() {
+            rotatingCircle.style.opacity = 0.9; // Fade out
+            setTimeout(() => {
+                currentImageIndex = (currentImageIndex + 1) % sharinganImages.length;
+                const newImage = sharinganImages[currentImageIndex];
+                rotatingCircle.style.backgroundImage = `url(${newImage})`;
+                rotatingCircle.style.animationDuration = `${rotationTimes[currentImageIndex]}s`;
+                rotatingCircle.style.animationTimingFunction = 'cubic-bezier(0.5, 0, 0.5, 1)';
+                rotatingCircle.style.opacity = 1; // Fade in
+                console.log(`Image changed to: ${newImage}`); // Debugging log
+            }, 1500);
+        }
+
+        // Change the image every 1.65 seconds
+        changeSharinganImage();
+        interval = setInterval(changeSharinganImage, 1650);
+
+        return () => clearInterval(interval); // Cleanup interval on component unmount
     }, []);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollTopButton = document.getElementById('back-to-top');
+            if (window.scrollY > 200) {
+                scrollTopButton.style.display = 'block';
+            } else {
+                scrollTopButton.style.display = 'none';
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    const scrollToTop = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
 
     const projectsArray = [
         {
@@ -183,73 +236,81 @@ export default function App() {
 
     return (
         <div className='app-container'>
-            <MyNavbar />
+                {/* <MyNavbar /> */}
 
-            <About />
+                <About />
 
-            <div className='exp-container-navbar' id='exp-container-navbar'></div>
+                <div className='exp-container-navbar' id='exp-container-navbar'></div>
 
-            <motion.h2 
-                className='projectsAndExperiences' 
-                id='projectsAndExperiences'
-                data-aos='fade-down'
-                data-aos-anchor-placement='bottom-bottom'
-            >
-                My Expereinces Work Summary
-            </motion.h2>
-
-            {expElements}
-
-            <div className='projects-container-navbar' id='projects-container-navbar'></div>
-
-            <motion.h2 
-                className='projectsAndExperiences' 
-                id='projectsAndExperiences'
-                data-aos='fade-down'
-                data-aos-anchor-placement='bottom-bottom'
-            >
-                Projects I've worked on
-            </motion.h2>
-
-            {projectsElements}
-            
-            <div className='skills-tools-container'>
-                <div className='skills-container-navbar' id='skills-container-navbar'></div>
-                <h2 
-                data-aos='fade-down' 
-                className='skills-tools' 
-                id='skills-tools'>
-                    Tech Stack
-                </h2>
-                <div 
-                    style={{ marginBottom: '100px' }}
-                    className='skills-container' 
-                    id='skills-container'
+                <motion.h2 
+                    className='projectsAndExperiences' 
+                    id='projectsAndExperiences'
+                    data-aos='fade-down'
+                    data-aos-anchor-placement='bottom-bottom'
                 >
-                    {skillsElements} 
-                </div>
-            </div>
-            <div className='education-container'>
-                <div className='education-container-navbar' id='education-container-navbar'></div>
-                <h2  className='education-header' id='education-header'>Education</h2>
-                {educationElements}
-            </div>
+                    My Expereinces Work Summary
+                </motion.h2>
 
-            <div className='contact-container' id='contact-container'>
-                <div className='contact-container-navbar' id='contact-container-navbar'></div>
-                <h2 data-aos='fade-down' data-aos-anchor-placement='bottom-bottom' className='contact-header'>Get in Touch</h2>
-                <Contact 
-                    name = 'Sarthak Jain'
-                    email = '24.sarthak.jain@gmail.com'
-                    number = '647-769-8833'
-                    linkedInImage = 'linkedinImage.png'
-                    githubImage = 'githubImage.png'
-                />
-            </div>
-            <footer className='footer'>
-                <p className='copyright-details'>Created by</p>
-                <p className='copyright-title'>SARTHAK JAIN</p>
-            </footer>
+                {expElements}
+
+                <div className='projects-container-navbar' id='projects-container-navbar'></div>
+
+                <motion.h2 
+                    className='projectsAndExperiences' 
+                    id='projectsAndExperiences'
+                    data-aos='fade-down'
+                    data-aos-anchor-placement='bottom-bottom'
+                >
+                    Projects I've worked on
+                </motion.h2>
+
+                {projectsElements}
+                
+                <div className='skills-tools-container'>
+                    <div className='skills-container-navbar' id='skills-container-navbar'></div>
+                    <h2 
+                    data-aos='fade-down' 
+                    className='skills-tools' 
+                    id='skills-tools'>
+                        Tech Stack
+                    </h2>
+                    <div 
+                        style={{ marginBottom: '100px' }}
+                        className='skills-container' 
+                        id='skills-container'
+                    >
+                        {skillsElements} 
+                    </div>
+                </div>
+                <div className='education-container'>
+                    <div className='education-container-navbar' id='education-container-navbar'></div>
+                    <h2  className='education-header' id='education-header'>Education</h2>
+                    {educationElements}
+                </div>
+
+                <div className='contact-container' id='contact-container'>
+                    <div className='contact-container-navbar' id='contact-container-navbar'></div>
+                    <h2 data-aos='fade-down' data-aos-anchor-placement='bottom-bottom' className='contact-header'>Get in Touch</h2>
+                    <Contact 
+                        name = 'Sarthak Jain'
+                        email = '24.sarthak.jain@gmail.com'
+                        number = '647-769-8833'
+                        linkedInImage = 'linkedinImage.png'
+                        githubImage = 'githubImage.png'
+                    />
+                </div>
+                <footer className='footer'>
+                    <p className='copyright-details'>Created by</p>
+                    <p className='copyright-title'>SARTHAK JAIN</p>
+                </footer>
+
+                <div id="rotating-circle"></div> {/* Add rotating circle element */}
+
+                <div id="back-to-top" onClick={scrollToTop}>
+                    {/* <div id="back-to-top-arrow">
+                        <span>&#x21e7;</span>
+                    </div> */}
+                </div>
         </div>
     )
 }
